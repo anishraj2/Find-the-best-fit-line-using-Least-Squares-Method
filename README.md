@@ -24,23 +24,29 @@ RegisterNumber: 212222230010
 
 import numpy as np
 import matplotlib.pyplot as plt
-x=np.array(eval(input('Enter X values:')))
-y=np.array(eval(input('Enter Y values:')))
+x=np.array(eval(input("Enter X values:")))
+y=np.array(eval(input("Enter Y values:")))
 x_mean=np.mean(x)
+print("X Mean:",x_mean)
 y_mean=np.mean(y)
+print("Y Mean:",y_mean)
 num=0
 denum=0
 for i in range(len(x)):
     num+=(x[i]-x_mean)*(y[i]-y_mean)
     denum+=(x[i]-x_mean)**2
 m=num/denum
-print(m)
+print("Slope:",m)
 b=y_mean-m*x_mean
-print(b)
+print("Y-Intercept:",b)
 y_pred=m*x+b
-print(y_pred)
+print("Predicted Values:",y_pred)
 plt.scatter(x,y)
 plt.plot(x,y_pred,color='red')
+plt.title("Univariate Linear Regression")
+plt.xlabel("X Values")
+plt.ylabel("Y Values")
+plt.show()
 ```
 
 ## Output:
